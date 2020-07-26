@@ -5,25 +5,27 @@ class ToDoList extends React.Component {
     constructor(props) {
         super(props)
 
-        this.handleInput.bind(this)
+        this.handleInput = this.handleInput.bind(this)
         this.state = {
             content: ""
         }
     }
 
     handleInput(event) {
-
-        this.setState(() => { content: "haha" })
-        console.log(event, this.state)
+        let value = event.target.value
+        this.setState(() => {
+            return { content: value }
+        })
+        console.log("hahah ", this.state, event.target.value)
     }
 
 
     render() {
         return (
-            <div>
-                <h2> To do list page </h2>
-                <input onChange={() => { this.handleInput }} type="text"></input>
-            </div>
+            <form  >
+                <h2> Add button </h2>
+                <input type="text" onChange={this.handleInput}></input>
+            </form>
         )
     }
 }
