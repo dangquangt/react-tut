@@ -8,12 +8,7 @@ class ToDoList extends React.Component {
         // this.playground.bind(this)
 
     }
-    componentDidMount() {
-        this.a()
-    }
-    a = function () {
-        console.log(this.itemName1)
-    }
+   
     render() {
         return (
             <h2> this props {this.itemName} </h2>
