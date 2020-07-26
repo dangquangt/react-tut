@@ -4,20 +4,26 @@ import React from "react";
 class ToDoList extends React.Component {
     constructor(props) {
         super(props)
-        this.itemName1 = props.itemName
-        // this.playground.bind(this)
 
+        this.handleInput.bind(this)
+        this.state = {
+            content: ""
+        }
     }
-    componentDidMount() {
-        this.a()
+
+    handleInput(event) {
+
+        this.setState(() => { content: "haha" })
+        console.log(event, this.state)
     }
-    a = function () {
-        console.log(this.itemName1)
-    }
+
+
     render() {
         return (
-            <h2> this props {this.itemName} </h2>
-
+            <div>
+                <h2> To do list page </h2>
+                <input onChange={() => { this.handleInput }} type="text"></input>
+            </div>
         )
     }
 }
